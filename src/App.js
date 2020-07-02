@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import Header from './App/Header';
-import About from './App/About';
-import Portfolio from './App/Portfolio';
-import Contact from './App/Contact';
+import Header from './components/Header';
+import About from './components/About';
+import Portfolio from './components/Portfolio';
+import Contact from './components/Contact';
 
 
 function App() {
@@ -13,11 +13,6 @@ function App() {
 
       <div className="App">
 
-        <Route exact path="/" component={Header} />
-        <Route path="/about" component={About} />
-        <Route path="/portfolio" component={Portfolio} />
-        <Route path="/contact" component={Contact} />
-
         <div className="navigation">
           <Link to="/" className="item">Home</Link>
           <Link to="/about" className="item">About</Link>
@@ -25,12 +20,10 @@ function App() {
           <Link to="/contact" className="item">Contact</Link>
         </div>
 
-        <div className="container">
-          <Header />
-          <About />
-          <Portfolio />
-          <Contact />
-        </div>
+        <Route exact path="/" component={Header} />
+        <Route path="/about" component={About} />
+        <Route path="/portfolio" component={Portfolio} />
+        <Route path="/contact" component={Contact} />
 
       </div>
     </BrowserRouter>
